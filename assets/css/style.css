@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  background-image: url("../img/fondopag.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+}
+
+.titulo {
+  text-align: center;
+  -webkit-text-stroke: 2px #F7E51F;
+  -webkit-text-fill-color: black;
+  color: transparent;
+  font-weight: 900;
+  font-size: 60px;
+}
+
+.areajuego {
+  position: relative;
+  margin: 0 auto;
+  width: 70%;
+  height: 700px;
+  border: 4px solid white;
+  background-image: url("../img/fondo.png");
+  cursor: url("../img/cursor.png"), auto;
+  color: white;
+  overflow: hidden;
+}
+
+.areajuego__intro {
+  width: 100%;
+  text-align: center;
+  -webkit-text-stroke: 1px #F7E51F;
+  -webkit-text-fill-color: black;
+  color: transparent;
+  position: absolute;
+  font-weight: 900;
+  font-size: 40px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.areajuego:hover h2 {
+  display: none;
+}
+
+.areajuego:hover {
+  -webkit-animation: fondoanimado 2s infinite linear;
+          animation: fondoanimado 2s infinite linear;
+}
+
+.areajuego__meteorito {
+  position: relative;
+  background-image: url("../img/meteoros.png");
+  background-size: 100%, 100%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  margin-bottom: 50px;
+}
+
+.areajuego__meteorito:hover ~ .findejuego {
+  display: block;
+}
+
+.areajuego:hover .areajuego__meteorito {
+  -webkit-animation-name: meteorito;
+          animation-name: meteorito;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.areajuego .m01 {
+  width: 45px;
+  height: 45px;
+  left: -250px;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.areajuego .m02 {
+  width: 60px;
+  height: 60px;
+  left: -50px;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+.areajuego .m03 {
+  width: 35px;
+  height: 35px;
+  left: -100px;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.areajuego .m04 {
+  width: 90px;
+  height: 90px;
+  left: -90px;
+  -webkit-animation-duration: 3.5s;
+          animation-duration: 3.5s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+.areajuego .m05 {
+  width: 45px;
+  height: 45px;
+  left: -250px;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-timing-function: cubic-bezier(0.85, 0.31, 0.19, 0.77);
+          animation-timing-function: cubic-bezier(0.85, 0.31, 0.19, 0.77);
+}
+
+.areajuego .m06 {
+  width: 35px;
+  height: 35px;
+  left: -150px;
+  -webkit-animation-duration: 4.5s;
+          animation-duration: 4.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.areajuego .findejuego {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url("../img/termino.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: none;
+  cursor: default;
+}
+
+.areajuego .findejuego div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.areajuego .findejuego h3 {
+  -webkit-text-stroke: 1px #F7E51F;
+  -webkit-text-fill-color: black;
+  color: transparent;
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.areajuego .findejuego:hover {
+  display: block;
+}
+
+@-webkit-keyframes fondoanimado {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 480px;
+  }
+}
+
+@keyframes fondoanimado {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 480px;
+  }
+}
+
+@-webkit-keyframes meteorito {
+  to {
+    left: 100%;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes meteorito {
+  to {
+    left: 100%;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}

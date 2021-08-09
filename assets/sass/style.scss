@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    background-image: url('../img/fondopag.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+}
+
+.titulo {
+    text-align: center;
+    -webkit-text-stroke: 2px #F7E51F;
+    -webkit-text-fill-color: black;
+    color: transparent;
+    font-weight: 900;
+    font-size: 60px;
+}
+
+.areajuego {
+    position: relative;
+    margin: 0 auto;
+    width: 70%;
+    height: 700px;
+    border: 4px solid white;
+    background-image: url('../img/fondo.png');
+    cursor: url('../img/cursor.png'), auto;
+    color: white;
+    overflow: hidden;
+    &__intro {
+        width: 100%;
+        text-align: center;
+        -webkit-text-stroke: 1px #F7E51F;
+        -webkit-text-fill-color: black;
+        color: transparent;
+        position: absolute;
+        font-weight: 900;
+        font-size: 40px;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    &:hover h2{
+        display: none;
+    }
+    &:hover{
+        animation: fondoanimado 2s infinite linear;
+    }
+
+    &__meteorito {
+        position: relative;
+        background-image: url('../img/meteoros.png');
+        background-size: 100%, 100%;
+        transform: translateX(-100%);
+        margin-bottom: 50px;
+        &:hover ~ .findejuego {
+            display: block;
+        }
+    }
+
+    &:hover .areajuego__meteorito {
+        animation-name: meteorito;
+        animation-iteration-count: infinite;
+    }
+
+    .m01 {
+        width: 45px;
+        height: 45px;
+        left: -250px;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+    }
+    .m02 {
+        width: 60px;
+        height: 60px;
+        left: -50px;
+        animation-duration: 6s;
+        animation-timing-function: ease;
+    }
+    .m03 {
+        width: 35px;
+        height: 35px;
+        left: -100px;
+        animation-duration: 4s;
+        animation-timing-function: ease-out;
+    }
+    .m04 {
+        width: 90px;
+        height: 90px;
+        left: -90px;
+        animation-duration: 3.5s;
+        animation-timing-function: ease-in;
+    }
+    .m05 {
+        width: 45px;
+        height: 45px;
+        left: -250px;
+        animation-duration: 2.5s;
+        animation-timing-function: cubic-bezier(.85,.31,.19,.77);
+    }
+    .m06 {
+        width: 35px;
+        height: 35px;
+        left: -150px;
+        animation-duration: 4.5s;
+        animation-timing-function: linear;
+    }
+    .findejuego {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-image: url('../img/termino.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        display: none;
+        cursor: default;
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        h3{
+            -webkit-text-stroke: 1px #F7E51F;
+            -webkit-text-fill-color: black;
+            color: transparent;
+            font-size: 40px;
+            font-weight: 900;
+            text-align: center;
+        }
+        &:hover {
+            display: block;
+        }
+    }
+}
+
+@keyframes fondoanimado {
+    from {
+        background-position-x: 0px;
+    }
+    to {
+        background-position-x: 480px;
+    }
+}
+
+
+@keyframes meteorito {
+    to {
+        left: 100%;
+        transform: translateX(100%)
+    }
+}
